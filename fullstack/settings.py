@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_heroku',
     'blog',
 ]
 
@@ -72,15 +73,14 @@ if os.getcwd() == '/app':
     import dj_database_url
     import django_heroku
 
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-    # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = False
-    # DEBUG = True
-    ALLOWED_HOSTS = ['fullstack-django.herokuapp.com']
-
     # Activate Django-Heroku.
     django_heroku.settings(locals())
+
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = True
+    ALLOWED_HOSTS = ['fullstack-django.herokuapp.com']
+
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     DATABASES = {
         'default': dj_database_url.config(default='postgres://localhost', conn_max_age=600, ssl_require=True)
@@ -96,7 +96,7 @@ else:
 
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = True
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Password validation
