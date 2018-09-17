@@ -72,6 +72,8 @@ if os.getcwd() == '/app':
     import dj_database_url
     import django_heroku
 
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = False
     # DEBUG = True
@@ -84,7 +86,6 @@ if os.getcwd() == '/app':
         'default': dj_database_url.config(default='postgres://localhost', conn_max_age=600, ssl_require=True)
     }
 
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 else:
     DATABASES = {
         'default': {
