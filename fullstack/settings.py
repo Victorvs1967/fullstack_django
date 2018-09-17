@@ -76,9 +76,7 @@ if os.getcwd() == '/app':
     django_heroku.settings(locals())
 
     # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = True
-
-    # DEBUG = False
+    DEBUG = False
     ALLOWED_HOSTS = ['fullstack-django.herokuapp.com']
 
     DATABASES = {
