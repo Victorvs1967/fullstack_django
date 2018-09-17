@@ -77,10 +77,9 @@ if os.getcwd() == '/app':
 
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = True
-    ALLOWED_HOSTS = []
 
     # DEBUG = False
-    # ALLOWED_HOSTS = ['fullstack-django.herokuapp.com']
+    ALLOWED_HOSTS = ['fullstack-django.herokuapp.com']
 
     DATABASES = {
         'default': dj_database_url.config(default='postgres://localhost', conn_max_age=600, ssl_require=True)
