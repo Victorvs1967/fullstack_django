@@ -76,7 +76,7 @@ if os.getcwd() == '/app':
     django_heroku.settings(locals())
 
     DEBUG = False
-    ALLOWED_HOSTS = ['learning-log-my.herokuapp.com']
+    ALLOWED_HOSTS = ['fullstack-django.herokuapp.com']
 
     DATABASES = {
         'default': dj_database_url.config(default='postgres://localhost', conn_max_age=600, ssl_require=True)
