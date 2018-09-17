@@ -75,8 +75,12 @@ if os.getcwd() == '/app':
     # Activate Django-Heroku.
     django_heroku.settings(locals())
 
-    DEBUG = False
-    ALLOWED_HOSTS = ['fullstack-django.herokuapp.com']
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = True
+    ALLOWED_HOSTS = []
+
+    # DEBUG = False
+    # ALLOWED_HOSTS = ['fullstack-django.herokuapp.com']
 
     DATABASES = {
         'default': dj_database_url.config(default='postgres://localhost', conn_max_age=600, ssl_require=True)
@@ -93,7 +97,6 @@ else:
 
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = True
-
     ALLOWED_HOSTS = []
 
 
