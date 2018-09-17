@@ -22,12 +22,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '1p3)^s$ud$0g4(yra2ub5uv-cm!t8k^t=%x))$&kj4%0cfmml5'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -81,6 +75,11 @@ if os.getcwd() == '/app':
         'default': dj_database_url.config(default='postgres://localhost'),
     }
     SECURE_PROXY_SSL_HEADER = ('HTTP_FORWARDED_PROTO', 'https')
+
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = True
+
+    ALLOWED_HOSTS = ['fullstack-django.herokuapp.com']
 else:
     DATABASES = {
         'default': {
@@ -88,6 +87,11 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
+
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = True
+
+    ALLOWED_HOSTS = []
 
 
 # Password validation
