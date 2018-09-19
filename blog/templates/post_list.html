@@ -6,38 +6,18 @@
     </head>
     <body>
         <div>
-            <h1><a href="">Blog</a></h1>
+            <h1><a href="/">Blog posts</a></h1>
         </div>
 
-        <div>
-            <p>published: 20.09.2018, 12:00</p>
-            <h2><a href="">First post.</a></h2>
-            <p>
-                gfkugjeqhbjvnb,mnb hlwkqjefklwgfb jkqwfehkwefjhkgjwrq ;uh'kgevlknDVN G HGKJGKHGF
-                hjguyjcvhjvkjhwe efwiufuycgueywfyucvuqyvc dqwhqiwudgljhcvb
-                cvhjvehcv jhfiuhqe iuhoiefwh
-            </p>
-        </div>
+        <ul>
+            {% for post in posts %}
+            <p>published: {{ post.published_date }}</p>
+            <li>
+                <h2><a href="">{{ post }}</a></h2h>
+            </li>
+            <p>{{ post.text|linebreaksbr }}</p>
+            {% endfor %}
+         </ul>
 
-        <div>
-            <p>published: 22.09.2018, 12:00</p>
-            <h2><a href="">Second post.</a></h2>
-            <p>
-                gfkugjeqhbjvnb,mnb hlwkqjefklwgfb jkqwfehkwefjhkgjwrq ;uh'kgevlknDVN G HGKJGKHGF
-                hjguyjcvhjvkjhwe efwiufuycgueywfyucvuqyvc dqwhqiwudgljhcvb
-                cvhjvehcv jhfiuhqe iuhoiefwh
-            </p>
-        </div>
-
-        <div>
-            <p>published: 24.09.2018, 12:00</p>
-            <h2><a href="">Third post.</a></h2>
-            <p>
-                gfkugjeqhbjvnb,mnb hlwkqjefklwgfb jkqwfehkwefjhkgjwrq ;uh'kgevlknDVN G HGKJGKHGF
-                hjguyjcvhjvkjhwe efwiufuycgueywfyucvuqyvc dqwhqiwudgljhcvb
-                cvhjvehcv jhfiuhqe iuhoiefwh
-            </p>
-        </div>
-
-     </body>
+      </body>
 </html>
