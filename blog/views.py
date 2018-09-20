@@ -1,7 +1,10 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import UserCreationForm
 from django.utils import timezone
-from django.shortcuts import redirect
+from django.shortcuts import redirect, reverse
 
 from .models import Post
 from .forms import PostForm
@@ -68,3 +71,18 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+def register(request):
+    """"""
+    if request.method == 'POST':
+        form = UserCreationForm(data=request.POST)
+        if form.is_valid():
+            new_user = form.save()
+            authenticated_user = authenticate(username=new_user.username, password=request.POST['password1'])
+            login(request, authenticated_user)
+            return HttpResponseRedirect(reverse('post_list'))
+    else:
+        form = UserCreationForm()
+
+    context = {'form': form}
+    return render(request, 'accounts/register.html', context)
