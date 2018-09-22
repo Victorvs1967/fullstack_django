@@ -77,7 +77,7 @@ if os.getcwd() == '/app':
     django_heroku.settings(locals())
 
     # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = True
+    DEBUG = False
     ALLOWED_HOSTS = ['fullstack-django.herokuapp.com', 'victors.pythonanywhere.com']
 
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
