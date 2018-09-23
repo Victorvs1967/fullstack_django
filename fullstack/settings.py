@@ -71,7 +71,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'fullstack.wsgi.application'
 
 LOGIN_REDIRECT_URL = '/'
-LOGIN_URL = 'accounts/login/'
+LOGIN_URL = '/accounts/login/'
 
 
 # Password validation
