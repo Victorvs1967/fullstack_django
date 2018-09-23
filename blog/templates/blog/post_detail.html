@@ -3,9 +3,7 @@
 {% block content %}
 
      <div class="post">
-         <div class="post_title">
-            <h2><a>{{ post }}</a></h2>
-         </div>
+         <h2><a class="post_title">{{ post }}</a></h2>
          <p>{{ post.text|linebreaksbr }}</p>
         {% if post.published_date %}
              <div class="date">

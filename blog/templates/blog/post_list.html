@@ -9,7 +9,7 @@
                 <p>published: {{ post.published_date|date:'d F, Y' }}</p>
              </div>
          {% endif %}
-        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post }}</a></h2>
+        <h2><a class="post_title" href="{% url 'post_detail' pk=post.pk %}">{{ post }}</a></h2>
         <p>{{ post.text|linebreaksbr }}</p>
      </div>
     {% endfor %}
