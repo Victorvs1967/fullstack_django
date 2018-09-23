@@ -49,16 +49,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-MIDDLEWARE_CLASSES = (
-    # Simplified static file serving.
-    # https://warehouse.python.org/project/whitenoise/
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-)
-
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 ROOT_URLCONF = 'fullstack.urls'
 
 TEMPLATES = [
@@ -127,6 +117,16 @@ if os.getcwd() == '/app':
     # SECURITY WARNING: don't run with debug turned on in production!
     # DEBUG = True
     ALLOWED_HOSTS = ['https://fullstack-django.herokuapp.com']
+
+    MIDDLEWARE_CLASSES = (
+        # Simplified static file serving.
+        # https://warehouse.python.org/project/whitenoise/
+        'whitenoise.middleware.WhiteNoiseMiddleware',
+    )
+
+    # Simplified static file serving.
+    # https://warehouse.python.org/project/whitenoise/
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
     DATABASES = {
         'default': dj_database_url.config(default='postgres://localhost', conn_max_age=600, ssl_require=True)
