@@ -25,6 +25,8 @@ ALLOWED_HOSTS = ['127.0.0.1', 'victors.pythonanywhere.com']
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '1p3)^s$ud$0g4(yra2ub5uv-cm!t8k^t=%x))$&kj4%0cfmml5'
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -128,8 +130,6 @@ if os.getcwd() == '/app':
     DATABASES = {
         'default': dj_database_url.config(default='postgres://localhost', conn_max_age=600, ssl_require=True)
     }
-
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     # Activate Django-Heroku.
     django_heroku.settings(locals())
