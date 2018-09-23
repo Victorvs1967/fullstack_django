@@ -1,6 +1,6 @@
 *.pyc
 *~
 __pycache__/
-/static
+/blog/static
 db.sqlite3
 .idea/
