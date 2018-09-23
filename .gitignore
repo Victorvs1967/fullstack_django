@@ -3,7 +3,6 @@
 __pycache__/
 *.sqlite3
 .idea/
-static/
 .DS_Store
 blog/.DS_Store
 fullstack/.DS_Store
