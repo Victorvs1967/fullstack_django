@@ -54,7 +54,7 @@ ROOT_URLCONF = 'fullstack.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'fullstack/template')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,10 +73,6 @@ WSGI_APPLICATION = 'fullstack.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# Extra places for collectstatic to find static files.
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'static'),
-# )
 
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'accounts/login/'
@@ -127,7 +123,7 @@ if os.getcwd() == '/app':
     import django_heroku
 
     # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = True
+    DEBUG = False
     ALLOWED_HOSTS = ['fullstack-django.herokuapp.com']
 
     DATABASES = {
