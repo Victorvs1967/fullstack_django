@@ -123,8 +123,8 @@ if os.getcwd() == '/app':
     import django_heroku
 
     # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = False
-    ALLOWED_HOSTS = ['fullstack-django.herokuapp.com']
+    DEBUG = True
+    ALLOWED_HOSTS = []
 
     DATABASES = {
         'default': dj_database_url.config(default='postgres://localhost', conn_max_age=600, ssl_require=True)
