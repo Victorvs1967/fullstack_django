@@ -1,6 +1,6 @@
 *.pyc
 *~
 __pycache__/
-static/
+fullstack/static/
 *.sqlite3
 .idea/
