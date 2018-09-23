@@ -72,7 +72,7 @@ WSGI_APPLICATION = 'fullstack.wsgi.application'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'accounts/login/'
@@ -115,7 +115,7 @@ if os.getcwd() == '/app':
     import dj_database_url
 
     # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = True
+    # DEBUG = True
     ALLOWED_HOSTS = ['https://fullstack-django.herokuapp.com']
 
     DATABASES = {
