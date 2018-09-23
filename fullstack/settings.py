@@ -69,6 +69,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'fullstack.wsgi.application'
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/2.1/howto/static-files/
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'accounts/login/'
 
@@ -110,16 +115,12 @@ if os.getcwd() == '/app':
     import dj_database_url
 
     # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = False
     ALLOWED_HOSTS = ['fullstack-django.herokuapp.com']
 
     DATABASES = {
         'default': dj_database_url.config(default='postgres://localhost', conn_max_age=600, ssl_require=True)
     }
-
-    # Static files (CSS, JavaScript, Images)
-    # https://docs.djangoproject.com/en/2.1/howto/static-files/
-    STATIC_URL = '/static/'
-    # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     # Activate Django-Heroku.
     django_heroku.settings(locals())
 
@@ -133,9 +134,3 @@ else:
 
     # SECURITY WARNING: don't run with debug turned on in production!
     ALLOWED_HOSTS = ['127.0.0.1', 'victors.pythonanywhere.com']
-
-    # Static files (CSS, JavaScript, Images)
-    # https://docs.djangoproject.com/en/2.1/howto/static-files/
-    STATIC_URL = '/static/'
-
-
