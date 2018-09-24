@@ -25,8 +25,6 @@ ALLOWED_HOSTS = ['127.0.0.1', 'victors.pythonanywhere.com']
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '1p3)^s$ud$0g4(yra2ub5uv-cm!t8k^t=%x))$&kj4%0cfmml5'
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -210,6 +208,8 @@ if os.getcwd() == '/app':
     import django_heroku
 
     # SECURITY WARNING: don't run with debug turned on in production!
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
     DEBUG = False
     ALLOWED_HOSTS = ['fullstack-django.herokuapp.com']
 
