@@ -28,14 +28,14 @@ def post_draft_list(request):
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.publish()
-    return redirect('post_detail', pk=pk)
+    return redirect('blog:post_detail', pk=pk)
 
 
 @login_required
 def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
-    return redirect('post_list')
+    return redirect('blog:post_list')
 
 
 @login_required
@@ -72,7 +72,7 @@ def post_edit(request, pk):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('blog:post_detail', pk=post.pk)
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
@@ -86,7 +86,7 @@ def register(request):
             new_user = form.save()
             authenticated_user = authenticate(username=new_user.username, password=request.POST['password1'])
             login(request, authenticated_user)
-            return HttpResponseRedirect(reverse('post_list'))
+            return HttpResponseRedirect(reverse('blog:post_list'))
     else:
         form = UserCreationForm()
 
