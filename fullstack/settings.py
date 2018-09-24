@@ -116,8 +116,11 @@ DATABASES = {
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 # Bootstrap setting
 BOOTSTRAP4 = {
@@ -213,14 +216,6 @@ if os.getcwd() == '/app':
     DATABASES = {
         'default': dj_database_url.config(default='postgres://localhost', conn_max_age=600, ssl_require=True)
     }
-
-    # Static files (CSS, JavaScript, Images)
-    # https://docs.djangoproject.com/en/2.1/howto/static-files/
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    STATIC_URL = '/static/'
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
-    )
 
     # Activate Django-Heroku.
     django_heroku.settings(locals())
