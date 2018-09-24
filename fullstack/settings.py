@@ -16,7 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['127.0.0.1', 'victors.pythonanywhere.com']
 
 # Quick-start development settings - unsuitable for production
@@ -210,7 +210,7 @@ if os.getcwd() == '/app':
     import django_heroku
 
     # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = True
+    DEBUG = False
     ALLOWED_HOSTS = ['fullstack-django.herokuapp.com']
 
     DATABASES = {
