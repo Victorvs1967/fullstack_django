@@ -210,7 +210,7 @@ if os.getcwd() == '/app':
     # SECURITY WARNING: don't run with debug turned on in production!
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-    DEBUG = False
+    DEBUG = True
     ALLOWED_HOSTS = ['fullstack-django.herokuapp.com']
 
     DATABASES = {
