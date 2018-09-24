@@ -13,7 +13,7 @@ urlpatterns = [
     url(r'^post/(?P<pk>\d+)/remove/$', views.post_remove, name='post_remove'),
     path('post/new/', views.post_new, name='post_new'),
     path('drafts/', views.post_draft_list, name='post_draft_list'),
-    path('register/', views.register, name='register'),
-    path('login/', auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='blog/post_list.html'), name='logout'),
+    path('accounts/register/', views.register, name='register'),
+    path('accounts/login/', auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),
+    path('accounts/logout/', auth_views.LogoutView.as_view(template_name='blog/post_list.html'), name='logout'),
 ]
