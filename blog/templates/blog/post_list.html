@@ -3,15 +3,17 @@
 {% block content %}
 
     {% for post in posts %}
-     <div class="post">
-         {% if post.published_date %}
-             <div class="date">
-                <p>published: {{ post.published_date|date:'d F, Y' }}</p>
-             </div>
-         {% endif %}
-        <h2><a class="post_title" href="{% url 'blog:post_detail' pk=post.pk %}">{{ post }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-     </div>
+
+        <div class="card">
+            <div class="card-header"><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post }}</a></div>
+            <div class="card-body">
+                 <p class="card-text">{{ post.text|linebreaksbr }}</p>
+                {% if post.published_date %}
+                    <small class="text-muted">published: {{ post.published_date|date:'d F, Y' }}</small>
+                {% endif %}
+           </div>
+        </div>
+
     {% endfor %}
 
 {% endblock %}

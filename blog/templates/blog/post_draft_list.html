@@ -3,10 +3,14 @@
 {% block content %}
 
     {% for post in posts %}
-     <div class="post">
-         <h2><a class="post_title" href="{% url 'blog:post_detail' pk=post.pk %}">{{ post }}</a></h2>
-         <p>{{ post.text|truncatechars:200 }}</p>
-     </div>
+
+        <div class="card">
+            <div class="card-header"><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post }}</a></div>
+            <div class="card-body">
+                 <p class="card-text">{{ post.text|truncatechars:200 }}</p>
+            </div>
+        </div>
+
     {% endfor %}
 
 {% endblock %}

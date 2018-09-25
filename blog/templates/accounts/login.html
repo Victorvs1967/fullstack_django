@@ -3,11 +3,6 @@
 
 {% block content %}
 
-    {% if form.error %}
-        <p>Your username or password fail. Try again.</p>
-    {% endif %}
-
-
     <form method="POST" action="{% url 'blog:login' %}" class="form">
         {% csrf_token %}
         {% bootstrap_form form %}
