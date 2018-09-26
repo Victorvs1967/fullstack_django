@@ -3,7 +3,6 @@ from django.http import HttpResponseRedirect, Http404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
-from django.utils import timezone
 from django.shortcuts import redirect, reverse
 
 from .models import Post
