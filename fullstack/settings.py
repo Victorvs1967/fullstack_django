@@ -54,7 +54,7 @@ ROOT_URLCONF = 'fullstack.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'fullstack/template')],
+        'DIRS': [os.path.join(BASE_DIR, 'fullstack/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -209,6 +209,10 @@ if os.getcwd() == '/app':
 
     # SECURITY WARNING: don't run with debug turned on in production!
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = False
+    ALLOWED_HOSTS = ['fullstack-django.herokuapp.com']
 
     DATABASES = {
         'default': dj_database_url.config(default='postgres://localhost', conn_max_age=600, ssl_require=True)
