@@ -9,6 +9,11 @@ from .models import Post
 from .forms import PostForm
 
 # Create your views here.
+def index(request):
+    """"""
+    return render(request, 'blog/index.html')
+
+
 @login_required
 def post_list(request):
     """"""
