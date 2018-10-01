@@ -1,6 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<div style="margin-top:10px">
 
     {% for post in posts %}
 
@@ -13,7 +14,7 @@
                 {% endif %}
            </div>
         </div>
-
     {% endfor %}
+</div>
 
 {% endblock %}

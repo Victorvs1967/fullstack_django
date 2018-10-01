@@ -1,9 +1,10 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<div style="margin-top:10px">
     <div class="jumbotron">
-        <h1 class="display-4"><a href="{% url 'blog:post_list' %}">Blog</a></h1>
+       <h1 class="display-4"><a href="{% url 'blog:post_list' %}">Blog</a></h1>
         <p class="lead">Blog list</p>
-       </div>
     </div>
+</div>
 {% endblock %}
