@@ -207,16 +207,16 @@ if os.getcwd() == '/app':
     import dj_database_url
     import django_heroku
 
+    # Activate Django-Heroku.
+    django_heroku.settings(locals())
+
     # SECURITY WARNING: don't run with debug turned on in production!
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = True
+    DEBUG = False
     ALLOWED_HOSTS = ['fullstack-django.herokuapp.com']
 
     DATABASES = {
         'default': dj_database_url.config(default='postgres://localhost', conn_max_age=600, ssl_require=True)
     }
-
-    # Activate Django-Heroku.
-    django_heroku.settings(locals())
