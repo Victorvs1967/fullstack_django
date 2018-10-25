@@ -16,8 +16,8 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ['127.0.0.1', 'victors.pythonanywhere.com', 'fullstack-django.herokuapp.com']
+DEBUG = True
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'victors.pythonanywhere.com', 'fullstack-django.herokuapp.com']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -214,7 +214,7 @@ if os.getcwd() == '/app':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = True
+    DEBUG = False
 
     DATABASES = {
         'default': dj_database_url.config(default='postgres://localhost', conn_max_age=600, ssl_require=True)
